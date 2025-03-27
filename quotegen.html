@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Quote Generetor</title>
+</head>
+<body>
+    <h1 class="title">Welcome to your quote generetor!</h1>
+    <div id="gen"></div>
+    <button id="generetor">Generate</button>
+    <div id="quoi"></div>
+    
+    <a href="qtgp.html">
+    <button class="pt">Put your own quotes!</button>
+</a>
+    <style>
+        .title{
+            font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+            text-align: center;
+        }
+
+        #gen{
+            width: 900px;
+            height: 300px;
+            background-color: rgb(99, 99, 99);
+            border-radius: 40px;
+            position: relative;
+            left: 300px;
+        }
+
+        #generetor{
+            font-family: fantasy;
+            position: relative;
+            left: 555px;
+            border-radius: 30px;
+            border-width: 0px;
+            background-color: aqua;
+            top: 100px;
+            font-size: 20px;
+        }
+
+        #quoi{
+            font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+            font-size: 25px;
+            position: relative;
+            left: 300px;
+            top: -150px;
+            animation: colorc 1s ease-in-out infinite alternate;
+        }
+        #generetor:hover{
+            animation: hh 0.15s ease-in-out forwards;
+            
+        }
+        
+        .pt{
+            font-family: fantasy;
+            position: relative;
+            left: 555px;
+            border-radius: 30px;
+            border-width: 0px;
+            background-color: aqua;
+            top:155px;
+            font-size: 20px;
+        }
+
+        .pt:hover{
+            animation: hover2 0.15s ease-in-out forwards;
+        }
+
+        body{
+            
+            background-image: url(https://media4.giphy.com/media/v1.Y2lkPTc5MGI3NjExMDdhcTZhYTAxcHl2YTQ3cDlyM25laGV3OW9pMnV4ZnkyeXVocXc0cyZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9Zw/l378wcSfS7eXWQgla/giphy.gif);
+            background-size: cover;
+        }
+
+        @keyframes hh{
+            from{
+                transform: scale(1);
+            }
+            to{
+                transform: scale(2);
+            }
+        }
+
+        @keyframes colorc{
+            0%{color: blue;}
+            50%{color: red;}
+            100%{color: purple;}
+            
+        }
+
+        @keyframes hover2{
+            from{
+                transform: scale(1);
+            }
+            to{
+                transform: scale(2);
+            }
+        }
+    </style>
+
+    <script>
+ 
+ let quotes =[
+ "Believe in yourself!",
+            "You can do it!",
+            "Stay positive, work hard, make it happen.",
+            "The best time for new beginnings is now.",
+            "Dream big and dare to fail.",
+            "Success is not final, failure is not fatal: It is the courage to continue that counts."
+ ];
+ 
+ 
+ let button = document.getElementById("generetor");
+        button.addEventListener("click", function(){
+            let randomQuote = quotes[Math.floor(Math.random() * quotes.length)];
+            
+            // Display it
+            document.getElementById("quoi").innerHTML = randomQuote;
+        })
+    </script>
+    
+</body>
+</html>
